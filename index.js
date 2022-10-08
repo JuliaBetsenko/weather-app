@@ -30,10 +30,31 @@ function search(event) {
   let cityInput = document.querySelector("#city-input");
   cityElement.innerHTML = cityInput.value;
 }
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 66;
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 19;
+}
+//challenge 1
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
-
-let searchForm = document.querySelector("#search-form");
-
-searchForm.addEventListener("submit", search);
 dateElement.innerHTML = formatDate(currentTime);
+
+//challenge 2
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", search);
+
+//Bonus feature
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", convertToCelsius);
