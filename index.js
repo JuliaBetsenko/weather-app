@@ -1,14 +1,15 @@
 function formatDate(date) {
-  let hours = currentTime.getHours();
+  let hours = date.getHours();
   if (hours < 10) {
     hours = `0 ${hours}`;
   }
 
-  let minutes = currentTime.getMinutes();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${hours}`;
   }
-  let dayIndex = currentTime.getDay();
+
+  let dayIndex = date.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -19,8 +20,11 @@ function formatDate(date) {
     "Saturday",
   ];
 
-  return `${days[dayIndex]}    ${hours}:${minutes}`;
+  let day = days[dayIndex];
+  return `${day}    ${hours}:${minutes}`;
 }
 
 dateElement = document.querySelector("#date");
 let currentTime = new Date();
+
+dateElement.innerHTML = formatDate(currentTime);
