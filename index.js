@@ -1,5 +1,4 @@
 function formatDate(date) {
-  return `${days[dayIndex]}    ${hours}:${minutes}`;
   let hours = currentTime.getHours();
   if (hours < 10) {
     hours = `0 ${hours}`;
@@ -19,6 +18,8 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
+
+  return `${days[dayIndex]}    ${hours}:${minutes}`;
 }
 
 dateElement = document.querySelector("#date");
