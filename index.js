@@ -24,7 +24,16 @@ function formatDate(date) {
   return `${day}    ${hours}:${minutes}`;
 }
 
-dateElement = document.querySelector("#date");
+function search(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#city");
+  let cityInput = document.querySelector("#city-input");
+  cityElement.innerHTML = cityInput.value;
+}
+let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 
+let searchForm = document.querySelector("#search-form");
+
+searchForm.addEventListener("submit", search);
 dateElement.innerHTML = formatDate(currentTime);
