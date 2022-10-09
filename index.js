@@ -30,9 +30,13 @@ function search(event) {
   // let cityInput = document.querySelector("#city-input");
   // cityElement.innerHTML = cityInput.value;
 
-  let apiKey = "40b745c14eadad7b7c4e6e4bf3b70103";
-  let city = "Paris";
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+
+  //let apiKey = "40b745c14eadad7b7c4e6e4bf3b70103";
+  //let city = "Paris";
+  //let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
 }
 
