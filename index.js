@@ -1,12 +1,12 @@
 function formatDate(date) {
   let hours = date.getHours();
   if (hours < 10) {
-    hours = `0 ${hours}`;
+    hours = `0${hours}`;
   }
 
   let minutes = date.getMinutes();
   if (minutes < 10) {
-    minutes = `0${hours}`;
+    minutes = `0${minutes}`;
   }
 
   let dayIndex = date.getDay();
@@ -26,9 +26,14 @@ function formatDate(date) {
 
 function search(event) {
   event.preventDefault();
-  let cityElement = document.querySelector("#city");
-  let cityInput = document.querySelector("#city-input");
-  cityElement.innerHTML = cityInput.value;
+  // let cityElement = document.querySelector("#city");
+  // let cityInput = document.querySelector("#city-input");
+  // cityElement.innerHTML = cityInput.value;
+
+  let apiKey = "40b745c14eadad7b7c4e6e4bf3b70103";
+  let city = "Paris";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
 }
 
 function convertToFahrenheit(event) {
